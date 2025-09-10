@@ -38,7 +38,7 @@ var user_age = 10;
 var user_height = 130;
 var user_area = '인천';
 const plus = 1;
-console.log(user_name, user_age, user_height, user_area)
+console.log(user_name, user_age, user_height, user_area);
 // Q. 김가을은 내년에 11살 입니다.
 //console.log(user_name,'은 내년에', user_age+1, '살 입니다.')
 console.log(`${user_name}은 내년에 ${user_age+1}살 입니다.`)
