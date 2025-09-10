@@ -221,3 +221,42 @@ number /= 2;
 console.log(number); 
 number %= 3;
 console.log(number); 
+
+console.log ('--------------------------------------------------')
+//함수
+//1. 내장함수
+//prompt('함수는?');
+//alert('함수는?');
+//print();
+//2. 사용자정의함수
+//function 함수명(인자){반복구문}
+//Q1. html, css, js 반복출력
+let lang1 = ''
+let lang2 = ''
+let lang3 = ''
+function study_lang(){
+    lang1 = 'html'
+    lang2 = 'css'
+    lang3 = 'javascript'
+    console.log(`배운언어 : ${lang1+lang2+lang3}`);
+}
+study_lang();//* 함수 호출상태 */
+/* 함수는 생성(대기)과 호출을 별개로 취급한다. */
+console.log(lang1, lang2, lang3);
+lang2 = lang2 + '3'
+console.log(lang2);
+
+console.log('지역변수와 전역변수')
+let xx = 1;
+let yy = 0;
+
+function func1(){
+    yy =5;
+    console.log(xx+yy)
+}
+function func2(){
+    let zz =10;
+    console.log(xx+yy+zz)
+}
+func1()
+func2()
