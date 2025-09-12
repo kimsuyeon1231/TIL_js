@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/* 변수파일이 두개일때는 *를 사용하기 보단, 이름을 설정하여 나누는게 좋다. */
+#tab_container {
+  background-color: #03c75a;
+}
+#tab_container .tab_title {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-content: center;
+}
+#tab_container .tab_contents {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media screen and (max-width: 1000px) {
+  #tab_container {
+    background-color: #ddd;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

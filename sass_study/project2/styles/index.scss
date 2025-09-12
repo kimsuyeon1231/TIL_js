@@ -1,0 +1,47 @@
+// 1360X750
+// #ffffd4
+@use'./common.scss' as *; 
+
+.slide_wrap {
+    @include pc_w_h;
+    background-color: $bg-color;
+    position: relative;
+    .slide_container{
+        .slide {}
+        .slide1 {
+            background-image: url(../images/bg1);
+            @include bg-cover;
+            background-size: 800px auto;
+            background-position: 120% center;
+            .title_contents {margin-bottom: 330px;
+                h2 {
+                    font-size: 3rem;
+                    font-weight: 700;
+                    margin-bottom: 20px;
+                }
+                p{font-size: 1.25rem; font-weight: 500;}
+            }
+            .bnr_link {
+                a {@include silde-btn}
+                .education_btn {background-color: $btn-dark; color: $btn-light;}
+                .new_btn {}
+            }
+        }
+        .slide2 {}
+        .slide3 {}
+    }
+    .slide_page_btn { @include pst-ab; top:auto; bottom: 50px; left: 60px;
+        @include flex-row; gap:20px;
+        .pagenation { @include flex-row; gap: 10px;
+            span {}
+            .current {font-weight: 700;}
+            .bar {width: 100px; height: 2px; background-color: #777;}
+            .total {font-weight: 500;}
+        }
+        .btn_g { 
+            button {background: none;}
+            #prev {margin-right: 20px;}
+            #next {}
+        }
+    }
+}

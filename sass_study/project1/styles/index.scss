@@ -1,0 +1,16 @@
+@use'./common.scss' as *; /* 변수파일이 두개일때는 *를 사용하기 보단, 이름을 설정하여 나누는게 좋다. */
+
+#tab_container {
+    background-color: $color-naver;
+    .tab_title {
+        @include flex-col;
+        a {
+            &:hover {}
+        }
+    }.tab_contents {
+        @include flex-row;
+        .tab {}
+        .tab1 {}
+        .tab2 {}
+    }
+}
