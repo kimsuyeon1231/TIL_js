@@ -1,0 +1,37 @@
+@use'./common.scss' as *;
+
+body {
+    background-color: #ffc;
+    main {
+        width: 420px; height: 640px;
+        margin: 50px auto; background-color: #fff;
+        box-shadow: 5px 5px 20px rgba(0,0,0,0.05);
+        .top {@include flex-row; justify-content: space-between; padding: 5px 15px;
+            .profile{@include flex-row; gap: px; 
+                .photo {@include icon20;background-image: url(https://images.unsplash.com/photo-1576158114254-3ba81558b87d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8JUVDJTlEJUI0JUVCJUFGJUI4JUVDJUE3JTgwfGVufDB8fDB8fHww);
+                    @include bg;  border-radius: 50%;
+                }
+                .name {font-size: $font-size-m;padding-left: 24px;}
+            }
+        .more {font-size: $font-size-m;}
+        }
+    .photo {background-image:url(https://plus.unsplash.com/premium_photo-1677343210638-5d3ce6ddbf85?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) ;
+        @include bg; height: 460px;}
+    #container { padding: 0 15px;
+        .menu {@include flex-row; justify-content: space-between; height: 40px;
+            .left {@include flex-row; gap: 6px;
+                .icon {@include icon24;
+                    img{width: 100%;}
+                }
+            }
+        #scrap {font-size: $font-size-m;}
+        }
+        .contents { @include flex-col; align-items: flex-start; gap:7px; 
+            .likes {font-size: $font-size-m;}
+            .name {font-size: $font-size-m;}
+            .comments {font-size: $font-size-s; color: $gray;}
+            .day {font-size: $font-size-s;}
+        }
+    }
+    }
+}

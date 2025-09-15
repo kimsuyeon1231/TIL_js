@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>instagram</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <script src="./script/index.js" defer></script>
+    <style>
+        main {position: relative;}
+        #popup {position: absolute;
+            top: 50%; left: 50%;
+            opacity: 0;
+        }
+        #popup svg{
+            fill:rgba(225,225,225,0.7);
+            stroke:#f5f5f5;
+            stroke-width: 10px;
+            overflow:visible;
+            transform: translate(-50%, -50%) scale(0.3);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- 팝업 -->
+        <div id="popup">
+            <svg width="166" height="161" viewBox="0 0 166 161" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M101.333 160.979V142.187C115.083 138.215 126.16 130.576 134.563 119.271C142.965 107.965 147.167 95.1319 147.167 80.7708C147.167 66.4097 142.965 53.5764 134.563 42.2708C126.16 30.9653 115.083 23.3264 101.333 19.3542V0.5625C120.278 4.84028 135.708 14.4271 147.625 29.3229C159.542 44.2187 165.5 61.3681 165.5 80.7708C165.5 100.174 159.542 117.323 147.625 132.219C135.708 147.115 120.278 156.701 101.333 160.979ZM0.499998 108.5V53.5H37.1667L83 7.66667V154.333L37.1667 108.5H0.499998ZM101.333 117.667V43.875C108.514 47.2361 114.128 52.2778 118.177 59C122.226 65.7222 124.25 73.0556 124.25 81C124.25 88.7917 122.226 96.0104 118.177 102.656C114.128 109.302 108.514 114.306 101.333 117.667Z">
+                </svg><!-- 피그마 svg 아이콘 붙여넣기 -->                
+        </div>
+        <!-- 고정 -->
+        <div class="top">
+            <a href="#" class="profile"><span class="photo"><span class="name">usernames</span></a>
+            <a href="#" class="more">더보기</a>
+        </div>
+        <div class="photo"><!-- bg --></div>
+        <div id="container">
+            <div class="menu">
+                <div class="left">
+                    <a href="#" class="like icon"><img src="./images/like_off.png" alt="좋아요"></a>
+                    <a href="#" class="comment icon"><img src="./images/comment_off.png" alt="댓글달기"></a>
+                    <a href="#" class="paper icon"><img src="./images/paper_off.png" alt="공유하기"></a>
+                </div>
+                <a href="#" class="scrap">스크랩</a>
+            </div>
+            <div class="contents">
+                <p class="likes">100 likes</p>
+                <p class="name">username</p>
+                <a href="#" class="comments">view all 20 comments</a>
+                <p class="day">3 Days Ago</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
