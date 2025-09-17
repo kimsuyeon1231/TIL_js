@@ -1,0 +1,334 @@
+@charset "UTF-8";
+body #wrap header {
+  height: 52px;
+  padding: 15px 80px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  gap: 16px;
+  border: 1px solid #bdbdbd;
+  border-left: 0;
+  border-right: 0;
+}
+body #wrap header a {
+  font-size: 1.063rem;
+}
+body main {
+  max-width: 1156px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+body main .path {
+  padding: 14px 0;
+}
+body main .path a {
+  position: relative;
+  font-size: 0.875rem;
+  padding-left: 12px;
+}
+body main .path a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: ">";
+  right: -12px;
+  left: auto;
+  top: 3px;
+  font-size: 0.813rem;
+  color: #757575;
+}
+body main .path a:last-child:after {
+  display: none;
+}
+body main .container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  gap: 24px;
+}
+body main .container .overview_img {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  gap: 15px;
+}
+body main .container .overview_img .thumnail {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  gap: 10px;
+}
+body main .container .overview_img .thumnail a {
+  width: 56px;
+  height: 56px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+body main .container .overview_img .thumnail img {
+  width: 100%;
+}
+body main .container .overview_img .overview {
+  width: 559px;
+  height: 559px;
+}
+body main .container .overview_img .overview img {
+  width: 100%;
+  border-radius: 5px;
+}
+body main .container .content {
+  margin-left: 24px;
+  max-width: 360px;
+  width: 360px;
+}
+body main .container .content .brand a {
+  font-size: 0.875rem;
+}
+body main .container .content .product_infos {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  justify-content: space-between;
+}
+body main .container .content .product_infos h2 {
+  font-size: 1.063rem;
+  margin: 25px 0;
+}
+body main .container .content .product_infos .right_icon {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: start;
+  gap: 10px;
+}
+body main .container .content .product_infos .right_icon .scrap {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+}
+body main .container .content .product_infos .right_icon .scrap svg {
+  stroke: #292929;
+  width: 24px;
+  height: 24px;
+}
+body main .container .content .product_infos .right_icon .scrap span {
+  font-size: 0.813rem;
+}
+body main .container .content .product_infos .right_icon .share svg {
+  stroke: #292929;
+  width: 24px;
+  height: 24px;
+}
+body main .container .content .review {
+  color: #0aa5ff;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  font-size: 0.813rem;
+}
+body main .container .content .review .score {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+}
+body main .container .content .review .score .star {
+  width: 14px;
+  height: 14px;
+  fill: #0aa5ff;
+}
+body main .container .content .price_wrap .sale_original_price {
+  margin: 25px 0;
+}
+body main .container .content .price_wrap .sale_original_price .original {
+  color: #bdbdbd;
+}
+body main .container .content .price_wrap .sale_original_price .price_info {
+  transform: translateY(4px);
+  width: 15px;
+  fill: #fff;
+  position: relative;
+}
+body main .container .content .price_wrap .sale_original_price .price_info .info_icon {
+  stroke: #292929;
+  width: 14px;
+  height: 14px;
+}
+body main .container .content .price_wrap .sale_original_price .price_info span {
+  font-size: 0.875rem;
+  width: 320px;
+  position: absolute;
+  top: 20px;
+  left: -150px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  display: none;
+}
+body main .container .content .price_wrap .total_price {
+  margin-bottom: 25px;
+}
+body main .container .content .price_wrap .total_price .price {
+  font-size: 2rem;
+  font-weight: 700;
+}
+body main .container .content .price_wrap .total_price span {
+  font-size: 1.375rem;
+}
+body main .container .content .price_wrap .total_price img {
+  width: 60px;
+}
+body main .container .content .benefit_ship {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: 45px 1fr;
+  grid-template-rows: 45px 1fr;
+  gap: 10px;
+  grid-template-areas: "title1 cont1" "title2 cont2" ". cont3" ". cont4" ". cont5" ". cont6"; /* .은 빈영역 */
+}
+body main .container .content .benefit_ship dt:nth-of-type(1) {
+  grid-area: title1;
+}
+body main .container .content .benefit_ship dt:nth-of-type(2) {
+  grid-area: title2;
+}
+body main .container .content .benefit_ship dd:nth-of-type(1) {
+  grid-area: cont1;
+}
+body main .container .content .benefit_ship dd:nth-of-type(2) {
+  grid-area: cont2;
+}
+body main .container .content .benefit_ship dd:nth-of-type(3) {
+  grid-area: cont3;
+}
+body main .container .content .benefit_ship dd:nth-of-type(4) {
+  grid-area: cont4;
+}
+body main .container .content .benefit_ship dd:nth-of-type(5) {
+  grid-area: cont5;
+}
+body main .container .content .benefit_ship dd:nth-of-type(6) {
+  grid-area: cont6;
+}
+body main .container .content .benefit_ship dd em {
+  font-weight: 700;
+}
+body main .container .content .benefit_ship .delivery {
+  padding: 15px 10px;
+  background-color: #f7f9fa;
+  border-radius: 5px;
+  width: 261px;
+}
+body main .container .content #oderFrm .product_opt {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  gap: 15px;
+  margin-top: 25px;
+  justify-self: start;
+}
+body main .container .content #oderFrm .product_opt select {
+  appearance: none;
+  background-image: url(../images/arrow_drop_down.png);
+  background-repeat: no-repeat;
+  background-position: 97%;
+  max-width: 360px;
+  width: 360px;
+  height: 44px;
+  padding: 10px 17px;
+  border: 1px solid #0aa5ff;
+  border-radius: 5px;
+}
+body main .container .content #oderFrm .product_opt #size_select {
+  margin-bottom: 15px;
+}
+body main .container .content #oderFrm .order_list {
+  background-color: #f7f9fa;
+  padding: 10px;
+  position: relative;
+}
+body main .container .content #oderFrm .order_list .info {
+  font-size: 0.875rem;
+  color: #757575;
+  padding: 5px;
+}
+body main .container .content #oderFrm .order_list .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+body main .container .content #oderFrm .order_list .num_price {
+  padding: 5px;
+}
+body main .container .content #oderFrm .order_list .num_price .num {
+  background-color: #fff;
+  display: inline-block;
+  padding: 5px 5px;
+  border: 1px solid #828c94;
+  border-radius: 5px;
+}
+body main .container .content #oderFrm .order_list .num_price .num #minus_btn {
+  width: 20px;
+}
+body main .container .content #oderFrm .order_list .num_price .num #order_num {
+  width: 10px;
+}
+body main .container .content #oderFrm .order_list .num_price .num #plus_btn {
+  width: 20px;
+}
+body main .container .content #oderFrm .order_list .num_price .price {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+}
+body main .container .content #oderFrm .order_price {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+body main .container .content #oderFrm .order_price .price {
+  font-weight: 700;
+}
+body main .container .content #oderFrm .order_price .price em {
+  font-weight: 700;
+  font-size: 1.375rem;
+}
+body main .container .content #oderFrm .order_btn #cart_btn {
+  width: 165px;
+  height: 57px;
+  padding: 0 20px 0;
+  text-align: center;
+  border: 1px solid #0aa5ff;
+  border-radius: 5px;
+  color: #0aa5ff;
+}
+body main .container .content #oderFrm .order_btn #buy_btn {
+  width: 165px;
+  height: 57px;
+  padding: 0 20px 0;
+  text-align: center;
+  border: 1px solid #0aa5ff;
+  border-radius: 5px;
+  background-color: #0aa5ff;
+  color: #fff;
+}
+
+@media screen and (max-width: 1000px) {
+  #wrap main .path {
+    padding: 14px 80px;
+  }
+  #wrap main .container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

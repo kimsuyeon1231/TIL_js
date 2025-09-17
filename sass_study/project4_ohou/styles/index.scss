@@ -1,0 +1,159 @@
+@use './common.scss' as *;
+
+body {
+    #wrap {
+        header {
+            height: 52px; padding: 15px 80px;
+            @include flex-row; gap: 16px;
+            border:1px solid $color-gray-light-lv2;
+            border-left: 0; border-right: 0;
+            a { font-size: $font-size-m;}
+        }
+    }
+    main {@include content-w;
+        .path { padding: 14px 0;
+            a { position: relative; font-size: $font-size-s; padding-left: 12px;
+                &::after {
+                    @include after_before; content: '>'; right: -12px; left: auto; top: 3px; font-size: $font-size-xs; color:$color-gray-medium;
+                }
+                &:last-child:after {display: none;}
+            }
+        }
+        .container {@include flex-row; gap: 24px;
+            .overview_img {@include flex-row; gap:15px;  
+                .thumnail { @include flex-col; gap:10px;
+                    a {@include thumnail;  @include border_radius;  overflow: hidden;}
+                    img{@include img_w100;}
+                }
+                .overview {@include thumnail-big;
+                    img {@include img_w100; @include border_radius; }    
+                }
+            }
+            .content { margin-left:24px; max-width:360px; width: 360px;
+                .brand {
+                    a {font-size: $font-size-s;}
+                }
+                .product_infos {@include flex-row; justify-content: space-between;
+                    h2 {font-size: $font-size-m; margin:25px 0;}
+                    .right_icon {@include flex-row; align-items: start; gap: 10px;
+                        .scrap {@include flex-col;
+                            svg {stroke: $color-gray-dark;
+                                @include icon24;
+                            }
+                            span {font-size: $font-size-xs;}
+                        }
+                        .share {
+                            svg {stroke: $color-gray-dark;
+                                @include icon24;
+                            }
+                        }
+                    }
+                }
+                .review {color: $color-point; @include flex-row; font-size: $font-size-xs;
+                    .score {@include flex-row;
+                        .star {@include icon14; fill:$color-point;}
+                        .sta1 {}
+                        .sta2 {}
+                        .sta3 {}
+                        .sta4 {}
+                        .sta5 {}
+                    }
+                    .number {}
+                }
+                .price_wrap {
+                    .sale_original_price {margin: 25px 0;
+                        .sale {}
+                        .original {color: $color-gray-light-lv2;}
+                        .price_info {transform: translateY(4px); width: 15px; fill: $color-white; position: relative;
+                            
+                            .info_icon {stroke: $color-gray-dark;
+                                @include icon14;
+                            }
+                            span {font-size: $font-size-s; width: 320px; position: absolute; top:20px; left: -150px;
+                                box-shadow: 2px 2px 2px 2px rgb(0 ,0,0,0.2);
+                                padding: 10px; background-color: $color-white;
+                                @include border_radius;
+                                display:none;
+                            }
+                        }
+                    }
+                    .total_price {margin-bottom: 25px;
+                        .price {font-size: $font-size-xl; font-weight: $font-width-bold;}
+                        span {font-size: $font-size-l;}
+                        img {width: 60px;}
+                    }
+                }
+                .benefit_ship {@include grid; grid-template-columns: 45px 1fr; grid-template-rows: 45px 1fr ; gap: 10px;
+                    grid-template-areas: 
+                    'title1 cont1'
+                    'title2 cont2'
+                    '. cont3'
+                    '. cont4'
+                    '. cont5'
+                    '. cont6';/* .은 빈영역 */
+                    dt {
+                        &:nth-of-type(1) {grid-area: title1;}
+                        &:nth-of-type(2) {grid-area: title2;}
+                    }
+                    dd {
+                        &:nth-of-type(1) {grid-area: cont1;}
+                        &:nth-of-type(2) {grid-area: cont2;}
+                        &:nth-of-type(3) {grid-area: cont3;}
+                        &:nth-of-type(4) {grid-area: cont4;}
+                        &:nth-of-type(5) {grid-area: cont5;}
+                        &:nth-of-type(6) {grid-area: cont6;}
+                        em {font-weight: $font-width-bold;}
+                    }
+                    .delivery {padding: 15px 10px; background-color: $color-gray-light-lv3; @include border_radius; width: 261px;
+                        em {}
+                    }
+                }
+                #oderFrm {
+                    .product_opt {@include flex-col; gap:15px; margin-top: 25px; justify-self: start;
+                        select {
+                            appearance: none;
+                            background-image: url(../images/arrow_drop_down.png);
+                            background-repeat: no-repeat;
+                            background-position: 97%;
+                            @include select; @include border_radius;
+                        }
+                        #color_select {
+                            #color_select > option {}
+                        }
+                        #size_select {margin-bottom: 15px;
+                            #size_select > option {}
+                        }
+                    }
+                    .order_list {background-color:$color-gray-light-lv3; padding: 10px;
+                        position: relative;
+                        .info {font-size: $font-size-s; color: $color-gray-medium; padding: 5px;
+                            .color {}
+                            .size {}
+                        }
+                        .close {position: absolute; top:10px; right: 20px;}
+                        .num_price {padding: 5px;
+                            .num {background-color: $color-white; display: inline-block; padding: 5px 5px; border: 1px solid $color-gray-light-lv1; @include border_radius;
+                                #minus_btn {width: 20px;}
+                                #order_num {width: 10px;}
+                                #plus_btn {width: 20px;}
+                            }
+                            .price {position: absolute; bottom:15px; right: 20px;}
+                        }
+                    }
+                    .order_price {@include flex-row; justify-content: space-between; margin-bottom: 25px; margin-top: 25px;
+                        p {}
+                        .price {font-weight: $font-width-bold;
+                            em {font-weight: $font-width-bold; font-size: $font-size-l;}
+                        }
+                    }
+                    .order_btn {
+                        #cart_btn {@include cart_buy_btn; @include border-radius; color: $color-point;
+                        }
+                        #buy_btn {@include cart_buy_btn; @include border-radius; background-color: $color-point; color:$color-white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
