@@ -1,0 +1,30 @@
+$font-size30:1.875rem;
+$font-size12:0.75rem;
+$font-size15:0.938rem;
+$font-size18:1.125rem;
+$font-size20:1.25rem;
+$font-size14:0.875rem;
+$font-size17:1.063rem;
+$font-width-regular:400;
+$font-width-mediun:500;
+$font-width-semibold:600;
+$font-width-bold:700;
+$letter-spacing-2: -2px;
+$color-pint:#008A48;
+$color-red : #E63D3D;
+$color-black :#000;
+$color-white :#fff;
+$color-gray-35 :#353535;
+$color-gray-59:#595959;
+$color-gray-70:#707070;
+$color-gray-99:#999999;
+$color-gray-d9:#d9d9d9;
+@mixin content-w {max-width: 1280px; min-width: 320px; margin: 0 auto;}
+@mixin flex-row {display: flex; flex-flow: row nowrap; justify-content: flex-start;}
+@mixin flex-col {display: flex; flex-flow: column nowrap; justify-content: flex-start;}
+@mixin button {width: 191px; height: 53px; border: 1px solid #008A48;}
+@mixin small-button {width: 53px; height: 53px; border: 1px solid #E63D3D;}
+@mixin img {width:60px}
+@mixin bgimg {width:640px}
+@mixin w-100 {width: 100%;}
+@mixin numbtn {width: 27px; height: 30px;}
