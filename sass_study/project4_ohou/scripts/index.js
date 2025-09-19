@@ -66,9 +66,9 @@ bookMark.addEventListener('click',()=>{
 
     loginStatus = localStorage.getItem('isLogin')
     if(loginStatus == 'true'){
-        location.href = './wish.html'
+        location.href = '../wish.html'
     }else{
-        location.href = './login.html'
+        location.href = '../login.html'
     }
 })
 
@@ -140,9 +140,10 @@ const colorSelect = document.querySelector('#color_select')
 const colorChoice = document.querySelector('.color')
 const sizeChoice = document.querySelector('.size')
 const orderPrice = document.querySelector('.order_price > .price > em')
-const numPlus = document.querySelector('#plus_btn')
-const numMinus = document.querySelector('#minus_btn')
+const plusBtn = document.querySelector('#plus_btn')
+const minusBtn = document.querySelector('#minus_btn')
 const orderNum = document.querySelector('#order_num')
+const orderListPrice = document.querySelector('.order_list .price')
 console.log (orderList,sizeSelect,colorSelect,colorChoice,sizeChoice)
 
 orderList.style.display = 'none';
@@ -179,7 +180,6 @@ colorSelect.addEventListener('change',()=>{
                 sizeChoice.textContent =orderSizeReplace;
                 orderPrice.textContent = productOptDB[0].price.toLocaleString('ko-kr');
                 //colorChoice.textContent = colorSelect.options[colorSelect.selectedIndex].text;
-
             }
         })
     }else { //사용자가 선택한 옵션이 0일때
@@ -215,7 +215,70 @@ orderList.children[1].addEventListener('click',()=>{ // parentNode 속성 활용
     sizeSelect.selectedIndex = sizeSelect.options[0] /* 사이즈 선택 초기화 */
 })
 
+// 9. 주문목록 + 클릭 시 재고수량까지 수량+금액 표시
+// 필요 목록 : +버튼(plusBtn), 재고수량(productOptDB[0].stock), 주문수량(orderNum), 주문금액(orderPrice), 증가 숫자 데이터
 
+let num = 1;// 초기주문수량
+orderNum.value = num;
 
+// + 버튼 클릭 시 (1)주문 수량이 1씩 증가하고 (2)주문수량에 따라 가격(productOptD[0].price) 증가하기
+plusBtn.addEventListener ('click',()=>{
+    if(num <productOptDB[0].stock){
+        orderNum.value = ++num;
+        let total = num * productOptDB[0].price
+        orderListPrice.textContent =total.toLocaleString('ko-kr')
+        orderPrice.textContent =total.toLocaleString('ko-kr')
+    }else {alert('최대 구매 수량입니다.')}
+})
 
+// 10. 주문목록 -버튼(minusBtn) 클릭 시 주문수량+주문금액 감소(1 이라면 경고창 출력)
+minusBtn.addEventListener ('click',()=>{
+    if(num > 1){
+        orderNum.value= --num;
+        let total = num*productOptDB[0].price
+        orderListPrice.textContent =total.toLocaleString('ko-kr')
+        orderPrice.textContent =total.toLocaleString('ko-kr')
+    }else {alert('최소 구매 수량입니다.')}
+})
 
+// 11. (상품 미선택 시) 장바구니, 바로구매 클릭 시 '상품선택하세요' 경고창 출력
+// 12. 😊(상품 선택 시) 장바구니, 바로구매 클릭 시 로그인 유무에 따라 다른 페이지로 이동
+const catBtn = document.querySelector('#cart_btn')
+const buyBtn = document.querySelector('#buy_btn')
+console.log(catBtn, buyBtn)
+
+/* catBtn.addEventListener('click',()=>{
+    if(colorSelect.selectedIndex ==0 || sizeSelect.selectedIndex == 0){
+        alert('상품을 선택해주세요.') // 상품 미선택 확인하는 조건문
+    }else{
+        loginStatus = localStorage.getItem('isLogin')
+        if(loginStatus == 'true'){location.href='./cart.html'
+        }else {location.href='./login.html'}
+    }
+})
+buyBtn.addEventListener('click',()=>{
+    if(colorSelect.selectedIndex ==0 || sizeSelect.selectedIndex == 0){
+        alert('상품을 선택해주세요.') // 상품 미선택 확인하는 조건문
+    }else{
+        loginStatus = localStorage.getItem('isLogin')
+        if(loginStatus == 'true'){
+        location.href='./cart.html'
+        }else {location.href='./login.html'}
+    }
+    }) */
+
+    catBtn.addEventListener('click',()=>{
+        cartBuyBtnFunc('./cart.html')
+    })
+    buyBtn.addEventListener('click',()=>{
+        cartBuyBtnFunc('./buy.html')
+    })
+function cartBuyBtnFunc(url){
+    if(colorSelect.selectedIndex ==0 || sizeSelect.selectedIndex == 0){
+        alert('상품을 선택해주세요.') // 상품 미선택 확인하는 조건문
+    }else{
+        loginStatus = localStorage.getItem('isLogin')
+        if(loginStatus == 'true'){
+        location.href= url
+        }else {location.href='./login.html'}
+    }}
