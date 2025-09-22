@@ -4,32 +4,39 @@
   justify-content: flex-start;
   gap: 40px;
   align-items: center;
-  padding: 40px 0;
+  padding: 40px 0 25px;
   max-width: 100%;
   margin: auto 50px;
-  position: sticky;
+  justify-content: space-between;
 }
 #wrap header .nav1 {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 35px;
+}
+#wrap header .nav1 a {
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
   gap: 5px;
 }
-#wrap header .nav1 span:first-child {
-  width: 20px;
+#wrap header .nav1 a span:first-child {
+  width: 22px;
 }
-#wrap header .nav1 span {
+#wrap header .nav1 a span {
   background-color: #000;
-  width: 15px;
-  height: 3px;
+  width: 17px;
+  height: 2.5px;
   display: block;
 }
-#wrap header h1 {
+#wrap header .nav1 h1 {
   width: 134px;
   height: 23px;
   margin-right: 150px;
 }
-#wrap header h1 img {
+#wrap header .nav1 h1 img {
   width: 100%;
 }
 #wrap header .nav2 {
@@ -42,6 +49,37 @@
   font-weight: 600;
   font-size: 1.25rem;
   color: #353535;
+  display: block;
+  white-space: nowrap;
+}
+#wrap header .rightmenu {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  gap: 40px;
+  justify-content: center;
+}
+#wrap header .rightmenu .brand {
+  background-color: #000;
+  color: #fff;
+  height: 31px;
+  white-space: nowrap;
+  border-radius: 16px;
+  padding: 7px 15px;
+  font-weight: 600;
+}
+#wrap header .rightmenu .icon_g {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  gap: 14px;
+}
+#wrap header .rightmenu .icon_g .icon {
+  width: 40px;
+  height: 40px;
+}
+#wrap header .rightmenu .icon_g .icon img {
+  width: 100%;
 }
 #wrap main {
   max-width: 1280px;
@@ -102,6 +140,9 @@
   display: block;
   border-radius: 50%;
 }
+#wrap main .container .overview_img .overview .circle .active {
+  opacity: 1;
+}
 #wrap main .container .content {
   max-width: 460px;
 }
@@ -131,12 +172,14 @@
 #wrap main .container .content .product_info h2 {
   font-size: 0.938rem;
   font-weight: 500;
-  color: #353535;
+  color: #666666;
   margin-bottom: 33px;
 }
 #wrap main .container .content .product_info .sale_price .sale {
   font-size: 1.875rem;
   font-weight: 600;
+  color: #008A48;
+  margin-right: 5px;
 }
 #wrap main .container .content .product_info .sale_price del {
   font-size: 1.125rem;
@@ -221,6 +264,7 @@
 #wrap main .container .content #orderFrm .price .order_price .price_em {
   font-size: 1.875rem;
   font-weight: 700;
+  color: #008A48;
 }
 #wrap main .container .content #orderFrm .price .order_price span {
   font-size: 0.875rem;
@@ -237,6 +281,7 @@
   width: 191px;
   height: 53px;
   border: 1px solid #008A48;
+  font-weight: 600;
   color: #008A48;
   background-color: #fff;
 }
@@ -244,6 +289,7 @@
   width: 191px;
   height: 53px;
   border: 1px solid #008A48;
+  font-weight: 600;
   color: #fff;
   background-color: #008A48;
 }
@@ -253,10 +299,6 @@
   border: 1px solid #E63D3D;
   background-color: #E63D3D;
 }
-#wrap footer {
-  background-color: aqua;
-  width: 500px;
-  height: 500px;
-}
+#wrap footer { /* background-color: aqua; width: 500px; height: 500px; */ }
 
 /*# sourceMappingURL=main.css.map */

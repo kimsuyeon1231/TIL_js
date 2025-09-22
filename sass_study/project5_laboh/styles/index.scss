@@ -1,17 +1,28 @@
 @use './common.scss' as*;
 
 #wrap {
-    header {@include flex-row; gap: 40px; align-items: center; padding: 40px 0; max-width: 100%; margin: auto 50px ; position: sticky;
-        .nav1{@include flex-col; gap:5px;
-            span:first-child {width: 20px;}
-            span{background-color: $color-black; width: 15px; height: 3px; display: block; 
+    header {@include flex-row; gap: 40px; align-items: center; padding: 40px 0 25px; max-width: 100%; margin: auto 50px ; justify-content:space-between;
+        .nav1 {@include flex-row; align-items: center; gap: 35px;
+            a{@include flex-col; gap:5px;
+                span:first-child {width: 22px;}
+                span{background-color: $color-black; width: 17px; height: 2.5px; display: block; 
+                }
             }
+            h1{width: 134px; height: 23px; margin-right: 150px;
+                img{width: 100%;}
         }
-        h1{width: 134px; height: 23px; margin-right: 150px;
-            img{width: 100%;}
         }
         .nav2{@include flex-row; gap: 40px;
-            a{font-weight: $font-width-semibold; font-size: $font-size20; color: $color-gray-35;}
+            a{font-weight: $font-width-semibold; font-size: $font-size20; color: $color-gray-35; display: block; white-space: nowrap;}
+        }
+        .rightmenu {@include flex-row; gap: 40px; justify-content: center;
+            .brand { background-color: $color-black; color: $color-white; height: 31px; white-space: nowrap;
+            border-radius: 16px; padding: 7px 15px; font-weight: $font-width-semibold;}
+            .icon_g {@include flex-row; gap: 14px; 
+                .icon {width: 40px; height: 40px;
+                    img{width: 100%;}
+                }    
+            }
         }
     }
     main {@include content-w; padding-top: 50px;
@@ -28,8 +39,8 @@
                     }
                     .circle {@include flex-row; gap: 10px; position: absolute; bottom: 26px; left: 275px;
                         span {width: 10px; height: 10px; background-color: black; opacity: 0.5; display: block; border-radius: 50%;
-                            
-                    }
+                        }
+                        .active{opacity: 1;}
                     }
                 }
             }
@@ -42,9 +53,9 @@
                 }
                 .product_info {
                     h1{font-size: $font-size30; font-weight: $font-width-bold; margin-bottom: 10px; line-height:1.5;  letter-spacing:$letter-spacing-2;}
-                    h2{font-size: $font-size15; font-weight: $font-width-mediun; color:$color-gray-35; margin-bottom: 33px; }
+                    h2{font-size: $font-size15; font-weight: $font-width-mediun; color:$color-gray-66; margin-bottom: 33px; }
                     .sale_price {
-                        .sale {font-size: $font-size30; font-weight: $font-width-semibold;}
+                        .sale {font-size: $font-size30; font-weight: $font-width-semibold; color: $color-point; margin-right: 5px;}
                         del{font-size: $font-size18; font-weight: $font-width-mediun; color: $color-gray-99; }
                         .benefit_price {font-weight:$font-width-mediun; font-size: $font-size15; margin: 15px 0 15px;
                             @include flex-row; gap: 10px;  align-items: center; color: $color-gray-99;
@@ -68,19 +79,19 @@
                     .price {@include flex-row; justify-content: space-between; align-items: center; border-top: 1px solid $color-gray-d9;
                         .order_price_text {font-size: $font-size17; font-weight: $font-width-semibold; color: $color-gray-59; padding: 30px 0;}
                         .order_price {
-                            .price_em {font-size: $font-size30; font-weight: $font-width-bold; }
+                            .price_em {font-size: $font-size30; font-weight: $font-width-bold; color: $color-point;}
                             span {font-size: $font-size14; color: $color-gray-59;}
                             .num_em {}
                         }
                     }
                     .btn_g {@include flex-row;  justify-content: space-between; align-items: center;
-                        #cart {@include button; color:$color-pint; background-color: $color-white;}
-                        #buy {@include button; color: $color-white; background-color: $color-pint;}
+                        #cart {@include button; color:$color-point; background-color: $color-white;}
+                        #buy {@include button; color: $color-white; background-color: $color-point;}
                         #Present {@include small-button; background-color: $color-red;}
                     }
                 }
             }
         }
     }
-    footer {background-color: aqua; width: 500px; height: 500px;}
+    footer {/* background-color: aqua; width: 500px; height: 500px; */}
 }
