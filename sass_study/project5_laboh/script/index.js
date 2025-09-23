@@ -1,6 +1,3 @@
-// 3. 리뷰 클릭 시 리뷰창으로 이동
-//
-
 // 1. 좌측 이미지 클릭하면 큰상품 이미지가 왼쪽으로 넘어가면서 변경
 // 1-1. 좌측 이전 이미지 클릭하면 큰상품 이미지 오른쪽으로 넘어가면서 변경
 // 2. 큰상품 이미지 안에 ．．．클릭하면 활성화 된 .은 검은색으로 변경, 이미지 왼쪽으로 넘어가면서 변경
@@ -41,6 +38,34 @@ thumnailImg[0].addEventListener('click',()=>{
     circle[3].classList.remove('active');
     circle[0].classList.add('active');
 })
+circle[1].addEventListener('click',()=>{
+    bigImg.style.transform = `translateX(-${bigImg.children[0].offsetWidth*1}px)`
+    circle[0].classList.remove('active');
+    circle[2].classList.remove('active');
+    circle[3].classList.remove('active');
+    circle[1].classList.add('active');
+})
+circle[2].addEventListener('click',()=>{
+    bigImg.style.transform = `translateX(-${bigImg.children[0].offsetWidth*2}px)`
+    circle[0].classList.remove('active');
+    circle[1].classList.remove('active');
+    circle[3].classList.remove('active');
+    circle[2].classList.add('active');
+})
+circle[3].addEventListener('click',()=>{
+    bigImg.style.transform = `translateX(-${bigImg.children[0].offsetWidth*3}px)`
+    circle[0].classList.remove('active');
+    circle[1].classList.remove('active');
+    circle[2].classList.remove('active');
+    circle[3].classList.add('active');
+})
+circle[0].addEventListener('click',()=>{
+    bigImg.style.transform = `translateX(0px)`
+    circle[1].classList.remove('active');
+    circle[2].classList.remove('active');
+    circle[3].classList.remove('active');
+    circle[0].classList.add('active');
+})
 // 4. 수량 -버튼 클릭 시 숫자 감소 (수량이 1일때 누를 경우 '최소 주문수량은 1개 입니다.' 팝업창 실행)
 // 5. 수량 +버튼 클릭 시 숫자 증가 (수량이 30일때 누를 경우 '최대 주문수량은 30개 입니다.' 팝업창 실행 - 최대 주문 가능 수량 30개)
 // 6. 수량 바뀔 시 아래 총상품금액 및 금액 옆 괄호 안에 선택한 수량만큼 숫자 변경
@@ -70,3 +95,34 @@ minusBtn.addEventListener('click',()=>{
         ordernum.textContent= -num;
     }else{alert('최소 주문수량은 1개 입니다.')}
 })
+
+//장바구니, 구매하기, 선물하기 버튼 클릭 시 팝업 생성
+const cartBtn =document.querySelector ('#cart')
+const buyBtn =document.querySelector ('#buy')
+const presentBtn =document.querySelector ('#Present')
+console.log(cartBtn,buyBtn,plusBtn)
+
+cartBtn.addEventListener('click',()=>{
+    const cartPopup = confirm('장바구니에 추가하시겠습니까?')
+    if(cartPopup){
+    const carPoPup2=confirm('선택하신 상품이 장바구니에 추가되었습니다.장바구니로 이동하시겠습니까?')
+        if(carPoPup2){
+            location.href='./buy.html'
+        }else{}
+    }else{}
+})
+buyBtn.addEventListener('click',()=>{
+    location.href='./buy.html'
+})
+let loginStatus = '';
+presentBtn.addEventListener('click',()=>{
+    loginStatus = localStorage.getItem('isLogin')
+    if(loginStatus == 'true'){
+        alert('비회원은 선물하기 기능을 사용할 수 없습니다.')
+    }else {location.href='./buy.html'}
+})
+
+//리뷰 클릭 시 스크롤 이동
+const reviewBtn = document.querySelector ('.review a')
+const reviewwrap = document.querySelector ('footer')
+console.log(reviewBtn, reviewwrap)
