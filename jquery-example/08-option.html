@@ -28,7 +28,32 @@
         <p class="select">선택옵션 : <span></span><button type="button" class="close">x</button></p>
     </div>
     <script>
-        
+        //1.선택옵션 초기 숨기기
+        //2.select 옵션 선택시
+        //3. 선택옵션 목록 출력하기
+        //4. 선택옵션 오른쪽 X 클릭 시 선태공ㅂ션 제거
+        const $selectOpt = $('select#color'); //select 태그
+        const $selectOrder = $('p.select'); //선택옵션
+        const $orderClose = $('.select .close') //X
+
+        $selectOrder.hide(); //1.선택옵션 초기 숨기기
+        //js ver
+        //selectOpt.addEventListener ('change',()=?{a()})
+        //function a () {selectOpt. options [selectedIdex]}
+
+        //jq ver
+        $selectOpt.change (function(){
+            console.log($(this).find('option:checked').val())
+            $selectOrder.show();//선택옵션 보이기
+            let thisVal = $(this).find('option:checked').val()
+            $selectOrder.find('span').text(thisVal);
+            //selectOrder.children[0].textContent(thisVal);
+
+        })
+        //4. 선택옵션 오른쪽 x 클릭 시 선택옵션 제거(가족관계활용)
+        $orderClose.click(function(){
+            $(this).parent().hide();
+        })
     </script>
 </body>
 </html>
