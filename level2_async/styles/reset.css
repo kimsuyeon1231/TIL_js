@@ -11,7 +11,7 @@ table,thead,tbody,tfoot,tr,td,th {
     word-spacing:0;
     font-size:1em; font-weight:400; font-style:normal;
     /* color:#000; 전체 기본글자색을 #000이 아닌 다른색으로 지정하고 싶을 때*/
-    font-family:'Noto Sans KR', '맑은 고딕', 'sans-serif';
+    /* font-family:'Noto Sans KR', 'sans-serif', '맑은 고딕'; */
 }
 /* 개별 태그 초기값 */
 a {text-decoration:none; color:#000;}
