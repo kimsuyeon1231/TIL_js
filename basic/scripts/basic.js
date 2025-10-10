@@ -106,3 +106,22 @@ console.log(`${dan99}X6=${dan99*6}`);
 console.log(`${dan99}X7=${dan99*7}`);
 console.log(`${dan99}X8=${dan99*8}`);
 console.log(`${dan99}X9=${dan99*9}`);
+
+console.log(-----------------------------------------------------------)
+const person = {
+    name : "Lee",
+    say () {
+        setTimeout(()=>{
+            console.log("hi My Name is ${this.name}");
+        },1000)
+    },
+}
+person.say();
+
+console.log(-----------------------------------------------------------)
+const add = (a,b) => a+b;
+console.log(add(2,3))
+
+const numbers = [1,2,3,4]
+const doubled = numbers.map(num => num*2)
+console.log(doubled)

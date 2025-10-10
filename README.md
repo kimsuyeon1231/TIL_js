@@ -79,3 +79,26 @@
 * `selectedIndex` : select의 선택 option index 확인 속성
 * `options[index]` : select의 특정 option 확인 시 속성
 * 객체.속성, 객체.options[], 객체.selectedIndex
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+Question
+1-1. console.log ("1"+1)
+1-2. console.log (1+"1")
+1-3. console.log ("1"-1)
+2-1. console.log (Boolean("0"))
+2-2. console.log (Boolean(0))
+2-3. console.log (typeof[]);
+3. let a;
+     let b = null;
+3-1. console.log (typeof a)
+3-2. console.log (typeof b)
+
+답안
+1-1. 1 1
+1-2. 1 1
+1-3. 0
+2-1. true
+2-2. false
+2-3. object
+3-1. underfind
+3-2. object
